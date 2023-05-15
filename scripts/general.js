@@ -35,14 +35,8 @@ window.addEventListener('keydown', function(start) {
 
 let rockInterval = null;
 
-//Start game
-function startGame() {
-  interval = setInterval(scoreCount, 100); 
-  start.style.display = 'none';
-  
-  rockInterval = setInterval(startRocks, 100);
-  
-}
+
+
 
 //make the dog jump
 function jump() {
@@ -50,11 +44,48 @@ function jump() {
     dog.classList.add('dogActive');
     setTimeout(function() {
       dog.classList.remove('dogActive');
-    }, 550);
+    }, 600);
+  }
+}
+
+//Start game
+function startGame() {
+  interval = setInterval(scoreCount, 100); 
+  start.style.display = 'none';
+  rock.classList.add('rockActive');
+
+  let result = setInterval(function() {
+    let dogBottom = parseInt(getComputedStyle(dog).bottom);
+    //console.log(dogBottom);
+    let dogLeft = parseInt(getComputedStyle(dog).left);
+    //console.log(dogRight);
+    let rockBottom = parseInt(getComputedStyle(rock).getPropertyValue("bottom"));
+    //console.log(rockTop);
+    let rockLeft = parseInt(getComputedStyle(rock).getPropertyValue("left"));
+    //console.log(rockLeft);
+
+    if(rockLeft < (dogLeft +50) && dogBottom < (rockBottom+50)) {
+      gameOver.style.display = "block";
+      rock.classList.remove('rockActive');
+
+    }
+    
+  
+    
+  },10);
+}
+
+
+function gameEnd() {
+  if (dogBottom <= 90) {
+    gameOver.style.display = "block";
+  rock.classList.remove('rockActive');
+  clearInterval(result);
   }
 }
 
 
+/*
 //calculate a random number to the rocks to appear
 function randomTime() {
   let min = 1000; //min and max time between rocks
@@ -76,5 +107,5 @@ let startRocks = function() {
     }, 1000);
   }
 }
-
+*/
  
