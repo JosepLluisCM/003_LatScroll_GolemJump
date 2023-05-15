@@ -9,13 +9,44 @@
     <title>MiniGame Practice</title>
 
     <link rel="stylesheet" href="styles/general.css">
-    <script src="scripts/general.js"></script>
   </head>
 
   <body>
-    <main>
-      <h1>HELLO</h1>
+    
+    <header id="title">
+      <h1>THE JUMPING GAME</h1>
+    </header>
+
+    <main id="game">
+      <div class="sky"></div>
+      <div class="ground"></div>
+
+      <div class="dog js-dog"></div>
+      <div class="rock js-rock"></div>
+
+      <div class="score js-score">Score: 0</div>
+
+      <div class="start js-start">
+        <h2>Ready? Press space</h2>   
+      </div>
+
+      <div class="gameOver js-gameOver">
+        <h2>Game Over</h2>
+        <p>Your score is: 000</p>
+        <p>Press space to try again</p>
+      </div>
+
+
     </main>
+    
+
+    <footer id="info">
+      <p>info josep lluis cid marti</p>
+    </footer>
+
+
+
+    <script src="scripts/general.js"></script>
   </body>
 
 </html>
