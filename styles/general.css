@@ -37,17 +37,18 @@ body {
 }
 
 
+
 .skyContainer {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 75%;
   background-color: var(--sky);
   
 }
 
 .sky {
   
-  height: 700px;
+  height: 100%;
   width: 100vw;
   background-repeat: no-repeat;
 }

@@ -65,7 +65,7 @@ function startGame() {
     let rockLeft = parseInt(getComputedStyle(rock).getPropertyValue("left"));
     //console.log(rockLeft);
 
-    if(rockLeft < (dogLeft +50) && dogBottom < (rockBottom+50)) {
+    if(rockLeft < (dogLeft +100) && dogBottom < (rockBottom -10)) {
       gameOver.style.display = "block";
       rock.classList.remove('rockActive');
       clearInterval(interval);
