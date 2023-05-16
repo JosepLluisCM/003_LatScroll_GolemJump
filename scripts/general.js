@@ -26,6 +26,7 @@ window.addEventListener('keydown', function(start) {
     if (!isPlaying) {
       startGame();
       isPlaying = true;
+      gameOver.style.display = 'none';
     }
     else {
       jump();
@@ -67,15 +68,25 @@ function startGame() {
     if(rockLeft < (dogLeft +50) && dogBottom < (rockBottom+50)) {
       gameOver.style.display = "block";
       rock.classList.remove('rockActive');
-
+      clearInterval(interval);
+      
+      isPlaying = false;
+      gameOver.innerHTML = `
+        <h2>Game Over</h2>
+        <p>Your score is: ${playerScore}</p>
+        <p>Press space to try again</p>
+      `;
+      playerScore = 0;
     }
     
   
     
-  },10);
+  },2);
 }
 
 
+
+/*
 function gameEnd() {
   if (dogBottom <= 90) {
     gameOver.style.display = "block";
@@ -85,7 +96,7 @@ function gameEnd() {
 }
 
 
-/*
+
 //calculate a random number to the rocks to appear
 function randomTime() {
   let min = 1000; //min and max time between rocks

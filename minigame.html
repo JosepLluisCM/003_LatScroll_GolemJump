@@ -9,20 +9,23 @@
     <title>MiniGame Practice</title>
 
     <link rel="stylesheet" href="styles/general.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     
     <header id="title">
-      <h1>THE JUMPING GAME</h1>
+      <h1>GOLEM JUMP</h1>
     </header>
 
     <main id="game">
-      <div class="sky"></div>
-      <div class="ground"></div>
+      <div class="skyContainer"><img class="sky" src="images/background/game_background_1.png"></div>
+      <div class="groundContainer"><!-- <img class="ground" src="images/background/game_background_1.png"> --></div>
 
-      <div class="dog js-dog"></div>
-      <div class="rock js-rock"></div>
+      <div class="dog js-dog"><img class="dogImg" src="images/Golem_1/golem1_preview.png"></div>
+      <div class="rock js-rock"><img class="rockImg" src="images/rocks/middle_lane_rock2_1.png"></div>
 
       <div class="score js-score">Score: 0</div>
 
@@ -30,18 +33,16 @@
         <h2>Ready? Press space</h2>   
       </div>
 
-      <div class="gameOver js-gameOver">
-        <h2>Game Over</h2>
-        <p>Your score is: 000</p>
-        <p>Press space to try again</p>
-      </div>
+      <div class="gameOver js-gameOver"></div>
 
 
     </main>
     
 
     <footer id="info">
-      <p>info josep lluis cid marti</p>
+      <p>Info: Josep Lluis Cid Marti</p>
+      <p>webdevjosep@gmail.com</p>
+      <a href="https://github.com/JosepLluisCM" target="blank">github.com/JosepLluisCM</a>
     </footer>
 
 

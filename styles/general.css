@@ -21,9 +21,13 @@
   
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 body {
-  font-family: Arial, Cambria;
+  font-family: Roboto Slab, Arial;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -33,30 +37,49 @@ body {
 }
 
 
-.sky {
+.skyContainer {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: var(--sky);
+  
 }
 
-.ground {
+.sky {
+  
+  height: 700px;
+  width: 100vw;
+  background-repeat: no-repeat;
+}
+
+.groundContainer {
   position: absolute;
   width: 100%;
-  height: 35%;
+  height: 25%;
   bottom: 0px;
   
-  background-color: var(--ground);
+  background-image: linear-gradient(#2b1b38, #6d4a59);
 }
+
+/* .ground {
+  background-image
+  transform: scale(1, -3) translateY(-360px); 
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
 .dog {
   position: absolute;
-  background-color: white;
-  width: 50px;
-  height: 100px;
-  bottom: 35%;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  bottom: 21.5%;
   left: 15%;
-  
+}
+
+.dogImg {
+  height: 100%;
 }
 .dogActive {
   animation: jump 0.6s linear normal;
@@ -70,16 +93,21 @@ body {
 
 .rock {
   position: absolute;
-  background-color: var(--rocks);
-  width: 50px;
-  height: 50px;
-  bottom: 35%;
-  right: -50px;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  bottom: 25%;
+  right: -100px;
   
-  visibility:hidden;
+  display:none;
+}
+
+.rockImg {
+  height: 100%;
 }
 .rockActive {
   animation: cross 1s linear infinite normal;
+  display: block;
 }
 @keyframes cross {
   
@@ -92,29 +120,48 @@ body {
 }
 
 .score {
-  position: absolute;
-  bottom: 32%;
-  left: 14%;
+  position: fixed;
+  bottom: 20%;
+  left: 18.3%;
+  color: white;
+  font-size: 20px;
 }
 
 .gameOver, .start{
   position: absolute;
   left: 50%;
   top: 50%;
+  color: white;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+  padding: 10px 25px;
+  border-radius: 15px;
   transform: translate(-50%, -50%);
   z-index: 2;
+  font-size: 20px;;
 }
+
 
 header, footer {
   position: fixed;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  color: white;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+  padding: 10px 25px;
+  border-radius: 15px;
+  
 }
 
 header {
-  top: 10%;
+  top: 15%;
+  font-size: 45px;
+  
+}
+h1 {
+  padding: 0px 20px;
 }
 footer {
-  bottom: 3%;
+  bottom: 0%;
+  
 }
